@@ -26,7 +26,7 @@ function getRandomCredit(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function processDetections(detections, ctx) {
+function processDetections(detections) {
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = ''; // Clear previous results
 
@@ -47,14 +47,6 @@ function processDetections(detections, ctx) {
       priority = "Low Priority";
       creditScore = getRandomCredit(10, 49);
     }
-
-    // Draw bounding box and label
-    ctx.strokeStyle = 'red';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(item.bbox[0], item.bbox[1], item.bbox[2], item.bbox[3]);
-    ctx.font = '16px Arial';
-    ctx.fillStyle = 'red';
-    ctx.fillText(`${item.class} (${category})`, item.bbox[0], item.bbox[1] - 5);
 
     // Display structured results
     const section = document.createElement('div');

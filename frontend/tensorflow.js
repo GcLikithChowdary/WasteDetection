@@ -18,7 +18,9 @@ async function handleImageUpload(event) {
       // Load AI model & detect objects
       const cocoSsdModel = await cocoSsd.load();
       const detections = await cocoSsdModel.detect(image);
-      processDetections(detections, ctx);
+
+      // Process detections without drawing bounding boxes
+      processDetections(detections);
     };
   };
   reader.readAsDataURL(file);
