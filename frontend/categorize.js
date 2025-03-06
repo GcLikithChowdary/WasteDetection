@@ -1,29 +1,24 @@
 const categories = {
   recyclable: {
-    reward: "5 Reward Points",
     disposal: "Place in the recycling bin.",
   },
   nonRecyclable: {
-    reward: "2 Reward Points",
     disposal: "Place in the general waste bin.",
   },
   hazardous: {
-    reward: "10 Reward Points",
     disposal: "Dispose of at a hazardous waste facility.",
   },
   compostable: {
-    reward: "3 Reward Points",
     disposal: "Place in the compost bin.",
   },
   electronic: {
-    reward: "8 Reward Points",
     disposal: "Take to an e-waste recycling center.",
   },
 };
 
 // Priority-based waste classification
-const higher_priority = ["bottle", "can", "paper", "cardboard", "glass", "metal", "plastic","battery", "chemical", "paint", "oil", "solvent", "thermometer"];
-const medium_priority = ["phone", "laptop", "computer", "tv", "monitor", "printer","styrofoam", "ceramic", "light bulb", "cigarette", "diaper"];
+const higher_priority = ["bottle", "can", "paper", "cardboard", "glass", "metal", "plastic", "battery", "chemical", "paint", "oil", "solvent", "thermometer"];
+const medium_priority = ["phone", "laptop", "computer", "tv", "monitor", "printer", "styrofoam", "ceramic", "light bulb", "cigarette", "diaper"];
 const lower_priority = ["apple", "banana", "vegetable", "fruit", "leaves", "grass"];
 
 // Function to generate a random credit score within a given range
@@ -33,11 +28,10 @@ function getRandomCredit(min, max) {
 
 function processDetections(detections, ctx) {
   const resultsContainer = document.getElementById('results');
-  resultsContainer.innerHTML = '';
+  resultsContainer.innerHTML = ''; // Clear previous results
 
   detections.forEach(item => {
     const category = classifyObject(item.class);
-    const reward = categories[category]?.reward || "0 Points";
     const disposal = categories[category]?.disposal || "Unknown disposal method.";
 
     let priority = "Unknown";
@@ -54,6 +48,7 @@ function processDetections(detections, ctx) {
       creditScore = getRandomCredit(10, 49);
     }
 
+    // Draw bounding box and label
     ctx.strokeStyle = 'red';
     ctx.lineWidth = 2;
     ctx.strokeRect(item.bbox[0], item.bbox[1], item.bbox[2], item.bbox[3]);
@@ -69,7 +64,6 @@ function processDetections(detections, ctx) {
       <p><strong>Category:</strong> ${category}</p>
       <p><strong>Priority:</strong> ${priority}</p>
       <p><strong>Credit Score:</strong> ${creditScore}</p>
-      <p><strong>Reward:</strong> ${reward}</p>
       <p><strong>Disposal Instructions:</strong> ${disposal}</p>
     `;
     resultsContainer.appendChild(section);
