@@ -22,9 +22,9 @@ const categories = {
 };
 
 // Priority-based waste classification
-const higher_priority = ["Chemical Waste", "Medical Waste", "E-Waste", "Radioactive Waste"];
-const medium_priority = ["Plastic", "Glass", "Paper", "Metals"];
-const lower_priority = ["Household Trash", "Packaging Waste", "Street Litter"];
+const higher_priority = ["bottle", "can", "paper", "cardboard", "glass", "metal", "plastic","battery", "chemical", "paint", "oil", "solvent", "thermometer"];
+const medium_priority = ["phone", "laptop", "computer", "tv", "monitor", "printer","styrofoam", "ceramic", "light bulb", "cigarette", "diaper"];
+const lower_priority = ["apple", "banana", "vegetable", "fruit", "leaves", "grass"];
 
 // Function to generate a random credit score within a given range
 function getRandomCredit(min, max) {
