@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Waste Management</title> 
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>♻️ AI-Powered Waste Sorting</h1>
+    <p>Upload an image to classify waste, earn credit scores, and get disposal instructions.</p>
+    <input type="file" id="imageUpload" accept="image/*">
+    <div class="image-container">
+      <canvas id="canvas"></canvas>
+    </div>
+    <div id="results" class="output"></div>
+  </div>
+
+  <script src="tensorflow.js"></script>
+  <script src="categorize.js"></script>
+</html>

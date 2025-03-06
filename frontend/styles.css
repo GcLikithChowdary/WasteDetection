@@ -1,0 +1,114 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f4f4f4, #dff9fb);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    color: #27ae60;
+    font-size: 26px;
+    animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px rgba(39, 174, 96, 0.4); }
+    to { text-shadow: 0 0 20px rgba(39, 174, 96, 0.8); }
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #27ae60;
+    border-radius: 8px;
+    background: #ecf9f1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background: #d4f5e0;
+    border-color: #2ecc71;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#canvas {
+    border: 2px solid #ddd;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#canvas:hover {
+    box-shadow: 0px 4px 15px rgba(39, 174, 96, 0.5);
+}
+
+.output {
+    margin-top: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.category {
+    background: #e3f2fd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.category:hover {
+    transform: scale(1.05);
+    background: #bbdefb;
+}
+
+/* Button Styles */
+.button {
+    padding: 10px 20px;
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.button:hover {
+    background: #2ecc71;
+    transform: scale(1.1);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
