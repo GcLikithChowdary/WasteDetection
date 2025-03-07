@@ -1,5 +1,4 @@
 // app.js - Main JavaScript file to handle UI interactions & AI processing
-
 import { handleImageProcessing } from "./tensorflow.js";
 import { categorizeWaste } from "./categorize.js";
 

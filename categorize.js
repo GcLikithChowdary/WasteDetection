@@ -17,8 +17,8 @@ const categories = {
 };
 
 // Priority-based waste classification
-const higher_priority = ["bottle", "can", "paper", "cardboard", "glass", "metal", "plastic", "battery", "chemical", "paint", "oil", "solvent", "thermometer"];
-const medium_priority = ["phone", "laptop", "computer", "tv", "monitor", "printer", "styrofoam", "ceramic", "light bulb", "cigarette", "diaper"];
+const higher_priority = ["bottle", "can", "paper", "cardboard", "glass", "metal", "plastic", "battery", "chemical", "paint", "oil", "solvent", "thermometer","Fork", "Knife", "Spoon"];
+const medium_priority = ["phone", "laptop", "computer", "tv", "monitor", "printer", "styrofoam", "ceramic", "light bulb", "cigarette", "diaper","toothbrush","scissors","Teddy Bear","wine glass"];
 const lower_priority = ["apple", "banana", "vegetable", "fruit", "leaves", "grass"];
 
 // Function to generate a random credit score within a given range
@@ -65,11 +65,11 @@ function processDetections(detections) {
 function classifyObject(objectName) {
   objectName = objectName.toLowerCase();
 
-  const recyclableItems = ["bottle", "can", "paper", "cardboard", "glass", "metal", "plastic"];
+  const recyclableItems = ["bottle", "can", "paper", "cardboard", "glass", "metal", "plastic","Fork", "Knife", "Spoon"];
   const hazardousItems = ["battery", "chemical", "paint", "oil", "solvent", "thermometer"];
   const compostableItems = ["apple", "banana", "vegetable", "fruit", "leaves", "grass"];
   const electronicItems = ["phone", "laptop", "computer", "tv", "monitor", "printer"];
-  const nonRecyclableItems = ["styrofoam", "ceramic", "light bulb", "cigarette", "diaper"];
+  const nonRecyclableItems = ["styrofoam", "ceramic", "light bulb", "cigarette", "diaper","toothbrush","scissors","Teddy Bear","wine glass"];
 
   if (recyclableItems.includes(objectName)) return "recyclable";
   if (hazardousItems.includes(objectName)) return "hazardous";
