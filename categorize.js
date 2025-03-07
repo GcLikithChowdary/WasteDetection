@@ -136,6 +136,7 @@ function processDetections(detections) {
       priority = "Low Priority";
       creditScore = getRandomCredit(10, 49);
     }
+    alert("Congratulations! You have successfully earned " + creditScore + " points for recycling " + item.class + "!");
 
     // Display structured results
     const section = document.createElement("div");
