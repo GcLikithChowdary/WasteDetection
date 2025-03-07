@@ -18,10 +18,10 @@ const categories = {
 
 // Priority-based waste classification
 const higher_priority = [
-  "bottle", "can", "paper", "cardboard", "glass", "metal", "plastic", "battery", "chemical", "paint", "oil", "solvent", "thermometer", "fork", "knife", "spoon"
+  "bottle", "can", "paper", "cardboard", "glass", "metal", "plastic", "battery", "chemical", "paint", "oil", "solvent", "thermometer", "fork", "knife", "spoon","cup"
 ];
 const medium_priority = [
-  "phone", "laptop", "computer", "tv", "monitor", "printer", "styrofoam", "ceramic", "light bulb", "cigarette", "diaper", "toothbrush", "scissors", "teddy bear", "wine glass"
+  "phone", "laptop", "computer", "tv", "monitor", "printer", "styrofoam", "ceramic", "light bulb", "cigarette", "diaper", "toothbrush", "scissors", "teddy bear", "wine glass","keyboard","mouse","cell phone"
 ];
 const lower_priority = ["apple", "banana", "vegetable", "fruit", "leaves", "grass"];
 
@@ -159,10 +159,10 @@ function processDetections(detections) {
 function classifyObject(objectName) {
   objectName = objectName.toLowerCase();
 
-  const recyclableItems = ["bottle", "can", "paper", "cardboard", "glass", "metal", "plastic", "fork", "knife", "spoon"];
+  const recyclableItems = ["bottle", "can", "paper", "cardboard", "glass", "metal", "plastic", "fork", "knife", "spoon","cup"];
   const hazardousItems = ["battery", "chemical", "paint", "oil", "solvent", "thermometer"];
   const compostableItems = ["apple", "banana", "vegetable", "fruit", "leaves", "grass"];
-  const electronicItems = ["phone", "laptop", "computer", "tv", "monitor", "printer"];
+  const electronicItems = ["phone", "laptop", "computer", "tv", "monitor", "printer","keyboard","mouse","cell phone"];
   const nonRecyclableItems = ["styrofoam", "ceramic", "light bulb", "cigarette", "diaper", "toothbrush", "scissors", "teddy bear", "wine glass"];
 
   if (recyclableItems.includes(objectName)) return "recyclable";
