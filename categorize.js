@@ -173,11 +173,6 @@ function classifyObject(objectName) {
   return "nonRecyclable";
 }
 
-// function clear_content() {
-//   const my_id = document.getElementById("results");
-//   my_id.innerHTML = "";
-// }
-
 function clear_content() {
   const my_id = document.getElementById("results");
   my_id.innerHTML = ""; // Clear the displayed results
